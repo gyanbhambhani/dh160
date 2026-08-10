@@ -78,7 +78,8 @@ export const methodology = {
     heading: "The methods are not neutral",
     paragraphs: [
       "None of these choices is neutral. My stopword list decides which words are allowed to matter. The number of topics decides how fine-grained the map of confession types can be. My seed words for tagging encode my own prior sense of what each transgression looks like. Each of these is an interpretation wearing the costume of a setting.",
-      "I treat the methods as instruments in Ihde's sense: they amplify some relations and are blind to others. What they let me see and what they quietly remove \u2014 TF-IDF's erasure of sequence, topic modeling's flattening of morally distinct situations, and a top-posts corpus that already carries the community's judgment inside it \u2014 is the subject of the Critical Reflection page, which argues those limits are the finding rather than a caveat attached to it.",
+      "I treat the methods as instruments in Ihde's sense: they amplify some relations and are blind to others. I also read them against Henrickson and Meroño-Peñuela's hermeneutic contract, and against their finding that increasing a prompt's specificity tends to produce intensified neutrality \u2014 a direct warning about my own pipeline, since the more tightly I specify what a model should extract, the flatter and more hermeneutically empty the result is likely to be.",
+      "The Critical Reflection page is where this is worked out in full. In a sentence: it reflects on what interpreting r/confession through TF-IDF and topic modeling lets me see and what it quietly removes \u2014 TF-IDF's erasure of sequence, topic modeling's flattening of morally distinct situations, and a top-posts corpus that already carries the community's judgment inside it \u2014 and argues those limits are the finding rather than a caveat attached to it.",
     ],
   },
 
