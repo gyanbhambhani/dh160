@@ -1,26 +1,200 @@
 @import "tailwindcss";
 
+@theme {
+  --color-ink: #101219;
+  --color-veil: #191d2a;
+  --color-paper: #e7e3db;
+  --color-ash: #8b90a0;
+  --color-dusk: #7d9bc1;
+  --color-signal: #d9a441;
+
+  --font-display: var(--font-fraunces);
+  --font-body: var(--font-literata);
+  --font-mono: var(--font-jetbrains);
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  color-scheme: dark;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  background: var(--color-ink);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-ink);
+  color: var(--color-paper);
+  font-family: var(--font-body), Georgia, serif;
+  font-size: 18px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Type scale ---------------------------------------------------------- */
+
+.font-display {
+  font-family: var(--font-display), Georgia, serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+}
+
+.eyebrow {
+  font-family: var(--font-mono), ui-monospace, monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.72rem;
+  color: var(--color-ash);
+}
+
+.mono {
+  font-family: var(--font-mono), ui-monospace, monospace;
+  letter-spacing: 0.06em;
+}
+
+/* Measure ------------------------------------------------------------- */
+
+.measure {
+  max-width: 68ch;
+}
+
+.prose-body p {
+  margin-block: 1.15em;
+  max-width: 68ch;
+}
+
+.prose-body p:first-child {
+  margin-top: 0;
+}
+
+/* Links --------------------------------------------------------------- */
+
+a {
+  color: var(--color-dusk);
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Focus --------------------------------------------------------------- */
+
+:focus-visible {
+  outline: 2px solid var(--color-dusk);
+  outline-offset: 3px;
+  border-radius: 1px;
+}
+
+/* Selection ----------------------------------------------------------- */
+
+::selection {
+  background: color-mix(in srgb, var(--color-dusk) 35%, transparent);
+  color: var(--color-paper);
+}
+
+/* Disclosure rail (desktop) ------------------------------------------ */
+
+.rail {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: max(1.25rem, calc((100vw - 72rem) / 2 - 2.25rem));
+  width: 1px;
+  z-index: 30;
+  pointer-events: none;
+}
+
+.rail__line {
+  position: absolute;
+  top: 8rem;
+  bottom: 8rem;
+  left: 0;
+  width: 1px;
+  background: color-mix(in srgb, var(--color-dusk) 45%, transparent);
+}
+
+.rail__marker {
+  position: absolute;
+  left: -3px;
+  width: 7px;
+  height: 7px;
+  background: var(--color-dusk);
+  transform: translateY(-50%);
+  will-change: top;
+  transition: top 0.12s linear;
+}
+
+.rail__tick {
+  position: absolute;
+  left: -5px;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  transform: translateY(-50%);
+}
+
+.rail__tick::before {
+  content: "";
+  width: 11px;
+  height: 1px;
+  background: color-mix(in srgb, var(--color-dusk) 70%, transparent);
+  flex: none;
+}
+
+.rail__tick-label {
+  font-family: var(--font-mono), ui-monospace, monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.6rem;
+  color: var(--color-ash);
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+.rail__tick[data-active="true"] .rail__tick-label {
+  color: var(--color-dusk);
+}
+
+/* Top progress bar (mobile) ------------------------------------------ */
+
+.railbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: transparent;
+  z-index: 50;
+}
+
+.railbar__fill {
+  height: 100%;
+  width: 0;
+  background: var(--color-dusk);
+  transition: width 0.1s linear;
+}
+
+@media (max-width: 899px) {
+  .rail {
+    display: none;
+  }
+}
+
+@media (min-width: 900px) {
+  .railbar {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rail__marker {
+    transition: none;
+  }
+  .railbar__fill {
+    transition: none;
+  }
 }
