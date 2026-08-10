@@ -7,41 +7,71 @@ export const metadata: Metadata = {
   description: methodology.meta.description,
 };
 
+function Note({ children }: { children: React.ReactNode }) {
+  return (
+    <div
+      className="measure mt-5"
+      style={{
+        borderLeft: "1px solid var(--color-dusk)",
+        paddingLeft: "1rem",
+      }}
+    >
+      <span className="eyebrow" style={{ color: "var(--color-dusk)" }}>
+        Note
+      </span>
+      <p className="mt-1 text-[0.95rem]" style={{ color: "var(--color-ash)" }}>
+        {children}
+      </p>
+    </div>
+  );
+}
+
 export default function MethodologyPage() {
   return (
     <article>
-      <header className="mb-10">
+      <header className="mb-12">
         <p className="eyebrow mb-4">{methodology.eyebrow}</p>
         <h1 className="font-display text-4xl sm:text-5xl">{methodology.title}</h1>
-        <p className="measure mt-5" style={{ color: "var(--color-ash)" }}>
-          {methodology.intro}
-        </p>
       </header>
 
-      <ol className="mt-8 space-y-8">
-        {methodology.steps.map((step, i) => (
-          <li key={step.title} className="measure flex gap-5">
-            <span
-              className="mono pt-1 text-sm tabular-nums"
-              style={{ color: "var(--color-dusk)" }}
-              aria-hidden="true"
-            >
-              {String(i + 1).padStart(2, "0")}
-            </span>
-            <div>
-              <h2 className="font-display text-xl">{step.title}</h2>
-              <p className="mt-1">{step.body}</p>
-            </div>
-          </li>
-        ))}
-      </ol>
+      <section>
+        <h2 className="font-display measure text-2xl sm:text-3xl">
+          {methodology.corpus.heading}
+        </h2>
+        <div className="prose-body measure mt-3">
+          {methodology.corpus.paragraphs.map((p, i) => (
+            <p key={i}>{p}</p>
+          ))}
+        </div>
+      </section>
 
       <section className="mt-16">
         <h2 className="font-display measure text-2xl sm:text-3xl">
-          {methodology.distantToClose.heading}
+          {methodology.ethics.heading}
         </h2>
         <div className="prose-body measure mt-3">
-          <p>{methodology.distantToClose.body}</p>
+          {methodology.ethics.paragraphs.map((p, i) => (
+            <p key={i}>{p}</p>
+          ))}
+        </div>
+      </section>
+
+      <section className="mt-16">
+        <h2 className="font-display measure text-2xl sm:text-3xl">
+          {methodology.approach.heading}
+        </h2>
+        <div className="prose-body measure mt-3">
+          <p>{methodology.approach.intro}</p>
+        </div>
+
+        <div className="mt-8 space-y-14">
+          {methodology.approach.methods.map((method) => (
+            <div key={method.name}>
+              <h3 className="font-display measure text-xl">{method.name}</h3>
+              <p className="measure mt-3">{method.body}</p>
+              {method.note ? <Note>{method.note}</Note> : null}
+            </div>
+          ))}
         </div>
       </section>
 
@@ -71,24 +101,25 @@ export default function MethodologyPage() {
 
       <section className="mt-16">
         <h2 className="font-display measure text-2xl sm:text-3xl">
-          {methodology.reflection.heading}
+          {methodology.neutrality.heading}
         </h2>
         <div className="prose-body measure mt-3">
-          <p>{methodology.reflection.body}</p>
+          {methodology.neutrality.paragraphs.map((p, i) => (
+            <p key={i}>{p}</p>
+          ))}
         </div>
         <p className="measure mt-3">
           <Link href="/reflection">Read the Critical Reflection</Link>.
         </p>
       </section>
 
-      <section
-        className="measure mt-16 rounded-sm p-6"
-        style={{ background: "var(--color-veil)" }}
-      >
-        <h2 className="eyebrow mb-3" style={{ color: "var(--color-dusk)" }}>
-          {methodology.notDoing.heading}
+      <section className="mt-16">
+        <h2 className="font-display measure text-2xl sm:text-3xl">
+          {methodology.aiNote.heading}
         </h2>
-        <p>{methodology.notDoing.body}</p>
+        <div className="prose-body measure mt-3">
+          <p>{methodology.aiNote.body}</p>
+        </div>
       </section>
     </article>
   );
