@@ -24,7 +24,7 @@ export const findings = {
     {
       heading: "What survived filtering",
       paragraphs: [
-        "The raw file holds 50,000 posts. Removing those under 30 words dropped 2,344; capping at 2,000 dropped 156; 47,500 remain. Quartile cuts fall at 11, 21, and 54 upvotes. High and low below mean high and low for r/confession top posts, not for Reddit.",
+        "The raw file holds 50,000 posts. Removing those under 30 words dropped 2,344; capping at 2,000 words dropped 156; 47,500 remain. Quartile cuts fall at 11, 21, and 54 upvotes. High and low here mean high and low for r/confession top posts, not for Reddit.",
       ],
     },
     {
@@ -99,6 +99,7 @@ export const findings = {
       heading: "The two results together",
       paragraphs: [
         "Put the anonymity gradient beside the feeling-word gradient and they describe a community that extracts disclosure and then declines to reward the disclosing. The most anonymous, most self-exposing posts are not the ones that get upvoted. Narration is. Stated guilt is not. The missing verdict does not mean the community has no preference. It means the preference has to be read out of what it quietly promotes.",
+        "That preference is beyond-intention meaning in Henrickson and Meroño-Peñuela's sense: the confessor writes toward being heard, and the upvote records what readers did instead. Ihde's point is that I can see this only because TF-IDF made register visible and because the author column made anonymity countable. Both instruments also hid the thing I most wanted, which is when the disclosure falls. The Critical Reflection treats that trade as the hermeneutic circle rather than as a defect in the run.",
       ],
     },
   ] satisfies FindingsSection[],

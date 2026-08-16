@@ -21,19 +21,25 @@ export const home = {
     {
       heading: "The corpus",
       body: [
-        "Fifty thousand top-ranked posts spanning January 2011 through December 2023, with post ID, score, body text, timestamp, author, and title. After dropping posts under 30 words and over 2,000, the working corpus is 47,500. Median post length is 185 words, with a long tail running past a thousand. Median score is 21, and the maximum sits above 69,000. The spread matters: there is enough length for narrative structure to develop, and enough variance in reception to ask what gets rewarded.",
+        "Fifty thousand top-ranked posts spanning January 2011 through December 2023, with post ID, score, body text, timestamp, author, and title. After dropping posts under 30 words and over 2,000 words, the working corpus is 47,500. Median post length is 185 words, with a long tail running past a thousand. Median score is 21, and the maximum sits above 69,000. The spread matters: there is enough length for narrative structure to develop, and enough variance in reception to ask what gets rewarded.",
       ],
     },
     {
       heading: "How the analysis moves",
       body: [
-        "The project runs in two passes, and the data opened a third question I had not planned. Before either model runs I read the author column as a four-tier anonymity gradient — throwaway-named accounts, deleted accounts, one-time posters, and authors who return under the same name — and measure what that gradient buys. The distant pass then uses TF-IDF to isolate the vocabulary that separates high-scoring confessions from low-scoring ones, then topic modeling to surface recurring confession types. The close pass takes the posts sitting nearest the center of each topic and reads them line by line, attending to the one thing the models are structurally unable to see, which is sequence. Where the disclosure falls in the post. What is placed before it to soften the landing. What is withheld until the end.",
+        "The project runs in two passes, and the data opened a third question I had not planned. Before either model runs, I read the author column as a four-tier anonymity gradient — throwaway-named accounts, deleted accounts, one-time posters, and authors who return under the same name — and measure what that gradient buys. The distant pass then uses TF-IDF to isolate the vocabulary that separates high-scoring confessions from low-scoring ones, and topic modeling to surface recurring confession types. The close pass takes the posts sitting nearest the center of each topic and reads them line by line, attending to the one thing the models are structurally unable to see, which is sequence. Where the disclosure falls in the post. What is placed before it to soften the landing. What is withheld until the end.",
       ],
     },
     {
       heading: "A constraint stated up front",
       body: [
         "This is a dataset of top posts, which means the community's preferences are already baked into the corpus before any model runs. Whatever patterns I find describe rewarded confession rather than confession in general. The Critical Reflection page treats this as a finding about the instrument rather than a footnote about the data.",
+      ],
+    },
+    {
+      heading: "What I found",
+      body: [
+        "The answer to the research question is not the structure I expected. Anonymity buys disclosure: throwaway posters write longer, say they have never told anyone more often, and confess more severe acts. The community does not reward that disclosure. It rewards narration and scrolls past stated guilt. The two results do not meet. A community with no verdict still has a preference, and the preference has to be read out of what it quietly promotes. The pages that follow show how I reached that claim, and what the instruments could not see.",
       ],
     },
   ],

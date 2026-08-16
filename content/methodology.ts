@@ -19,7 +19,7 @@ export const methodology = {
   corpus: {
     heading: "Corpus",
     paragraphs: [
-      "This study uses 50,000 top-scoring submissions to r/confession, January 2011 through December 2023. Each record carries a post ID, score, body text, timestamp, author, and title. The usual Reddit-cleaning step drops bodies marked [deleted] or [removed]. This file has none, so I did not run it. After dropping posts under 30 words (2,344) and over 2,000 (156), the working corpus is 47,500. Median length is 185 words; median score is 21; the maximum sits above 69,000. I keep first-person pronouns and negations that most stopword lists discard, because here they carry the rhetorical weight.",
+      "This study uses 50,000 top-scoring submissions to r/confession, January 2011 through December 2023. Each record carries a post ID, score, body text, timestamp, author, and title. The usual Reddit-cleaning step drops bodies marked [deleted] or [removed]. This file has none, so I did not run it. After dropping posts under 30 words (2,344) and over 2,000 words (156), the working corpus is 47,500. Median length is 185 words; median score is 21; the maximum sits above 69,000. I keep first-person pronouns and negations that most stopword lists discard, because here they carry the rhetorical weight.",
       "These are top posts. The file does not describe typical confession activity. It describes what the community already chose to promote. r/confession has no verdict mechanism, so upvoting is nearly the only judgment it makes, and a top-post corpus is a record of rewarded confession. I first treated that as a sampling bug. It is closer to the object of study. The question changed from what confession looks like to what a rewarded confession looks like.",
     ],
     figure: figures.score,
@@ -35,7 +35,7 @@ export const methodology = {
   approach: {
     heading: "Approach",
     intro:
-      "I stayed close to techniques I could defend, and I started from the questions rather than from a method looking for a use. The pipeline runs at two speeds: a distant pass over 47,500 posts, and a close pass over a hand-read sample the distant pass points me toward.",
+      "I stayed close to techniques I could defend, and I started from the questions rather than from a method looking for a use. The pipeline runs at two speeds: a distant pass over 47,500 posts, and a close pass over a hand-read sample that the distant pass points me toward.",
     methods: [
       {
         name: "Score distribution",
@@ -55,7 +55,7 @@ export const methodology = {
       },
       {
         name: "TF-IDF comparison",
-        body: "Using scikit-learn's TfidfVectorizer over unigrams and bigrams, min_df 20, I compare the terms that distinguish high-scoring from low-scoring posts inside each named category, so infidelity is not just beating workplace on vocabulary. Quartiles are cut within category. Edit and thank you go into the stopword list after I caught them by reading.",
+        body: "Using scikit-learn's TfidfVectorizer over unigrams and bigrams, min_df 20, I compare the terms that distinguish high-scoring from low-scoring posts inside each named category, so infidelity posts are not just beating workplace posts on vocabulary. Quartiles are cut within category. Edit and thank you go into the stopword list after I caught them by reading.",
         note: "TF-IDF surfaces words that distinguish one set of documents from another. Whether those differences mean anything is a decision I still have to make by reading.",
       },
       {
@@ -74,7 +74,7 @@ export const methodology = {
   expected: {
     heading: "What I expected to find",
     intro:
-      "These are expectations, not results. Findings tracks each one against the figure meant to test it.",
+      "These are expectations, not results. The Findings page tracks each one against the figure meant to test it.",
     items: [
       "Deeper anonymity would buy more disclosure and a higher score.",
       "Remorse vocabulary would weight toward the upper score bands.",

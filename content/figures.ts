@@ -15,7 +15,7 @@ export const figures = {
     number: 1,
     alt: "Log-scale histogram of post scores for 47,500 working-corpus posts, with dashed quartile cuts near 11, 21, and 54.",
     caption:
-      "Score distribution, n = 47,500, log x-axis. Dashed lines mark cuts at 11, 21, and 54. Shows how score sits inside a top-posts file. Does not show typical r/confession activity, or why a post landed in a band.",
+      "Score distribution, n = 47,500, log x-axis. Dashed lines mark cuts at 11, 21, and 54. Shows how score sits inside a top-posts file. Does not show typical r/confession activity or why a post landed in a band.",
   },
   anonymity: {
     src: "/figures/fig2_anonymity_gradient.png",
@@ -42,7 +42,7 @@ export const figures = {
     number: 4,
     alt: "Horizontal bar chart of six transgression categories, with the other bucket highlighted in gold at about 25,000 posts.",
     caption:
-      "Category counts after keyword tagging. Gold is other, 52.6 percent of the working corpus. Shows how much the scheme failed to name. Does not show that those posts are one kind of confession.",
+      "Category counts after keyword tagging. Gold marks other, 52.6 percent of the working corpus. Shows how much the scheme failed to name. Does not show that those posts are one kind of confession.",
   },
   editArtifact: {
     src: "/figures/fig5_edit_artifact.png",

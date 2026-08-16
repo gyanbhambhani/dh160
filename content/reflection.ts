@@ -18,13 +18,13 @@ export const reflection = {
     {
       heading: "Specification and neutrality",
       paragraphs: [
-        "Henrickson and Mero\u00f1o-Pe\u00f1uela's finding about prompt specificity applies to a pipeline as much as to a prompt. My category tagger is six keyword lists that encode my prior sense of what a transgression looks like. It put 52.6 percent of the corpus into other: a specification can be precise and still fail to describe its object. The tighter I specify what to extract, the more the output describes my scheme back to me. The contraction topics are the extreme case \u2014 an accurate description of the corpus, and a description of nothing anyone confessed.",
+        "Henrickson and Mero\u00f1o-Pe\u00f1uela's finding about prompt specificity applies to a pipeline as much as to a prompt. My category tagger consists of six keyword lists that encode my prior sense of what a transgression looks like. It put 52.6 percent of the corpus into other: a specification can be precise and still fail to describe its object. The tighter I specify what to extract, the more the output describes my scheme back to me. The contraction topics are the extreme case \u2014 an accurate description of the corpus, and a description of nothing anyone confessed.",
       ],
     },
     {
       heading: "The corpus already contains the judgment",
       paragraphs: [
-        "The dataset is top posts. The community's preferences were baked in before any model ran, so everything above describes rewarded confession rather than confession. I began by treating that as a limitation to disclose. It is closer to the object of study. Upvoting is nearly the only judgment this community makes, and a top-post corpus is a record of that judgment in operation.",
+        "The dataset is top posts. The community's preferences were baked in before any model ran, so everything above describes rewarded confession rather than confession in general. I began by treating that as a limitation I had to disclose. It is closer to the object of study. Upvoting is nearly the only judgment this community makes, and a top-post corpus is a record of that judgment in operation.",
         "That reframing is where the hermeneutic circle became literal. I started with a question about what confessions look like. The shape of the data forced the question to change, and the changed question made the data legible. The author column opened a second question I had not planned. The instrument and the question kept redefining each other, which is what the circle describes.",
       ],
     },
