@@ -9,18 +9,23 @@ export const metadata: Metadata = {
 export default function ReflectionPage() {
   return (
     <article>
-      <header className="mb-8">
+      <header className="mb-12">
         <p className="eyebrow mb-4">{reflection.eyebrow}</p>
         <h1 className="font-display text-4xl sm:text-5xl">{reflection.title}</h1>
       </header>
 
-      <p className="measure italic" style={{ color: "var(--color-ash)" }}>
-        {reflection.scopeNote}
-      </p>
-
-      <div className="prose-body measure mt-8">
-        <p>{reflection.summary}</p>
-      </div>
+      {reflection.sections.map((section) => (
+        <section key={section.heading} className="mt-14 first:mt-0">
+          <h2 className="font-display measure text-2xl sm:text-3xl">
+            {section.heading}
+          </h2>
+          <div className="prose-body measure mt-3">
+            {section.paragraphs.map((p, i) => (
+              <p key={i}>{p}</p>
+            ))}
+          </div>
+        </section>
+      ))}
     </article>
   );
 }

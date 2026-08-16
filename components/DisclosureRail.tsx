@@ -3,16 +3,58 @@
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 
-const TICKS = [
-  { id: "setup", label: "Setup", pos: 0.12 },
-  { id: "disclosure", label: "Disclosure", pos: 0.5 },
-  { id: "aftermath", label: "Aftermath", pos: 0.88 },
-] as const;
+type Tick = { id: string; label: string; pos: number };
+
+function slugify(text: string) {
+  const slug = text
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+  return slug || "section";
+}
+
+function maxScroll() {
+  return Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
+}
+
+function headingTargetY(el: HTMLElement) {
+  const margin = parseFloat(getComputedStyle(el).scrollMarginTop) || 0;
+  return el.getBoundingClientRect().top + window.scrollY - margin;
+}
+
+function progressForY(y: number) {
+  const max = maxScroll();
+  if (max <= 0) return 0;
+  return Math.min(1, Math.max(0, y / max));
+}
+
+function currentProgress() {
+  return progressForY(window.scrollY);
+}
+
+function collectTicks(): Tick[] {
+  const main = document.querySelector("main");
+  if (!main) return [];
+  const used = new Set<string>();
+  return [...main.querySelectorAll("h2")].map((heading) => {
+    const label = heading.textContent?.trim() ?? "";
+    let id = heading.id || slugify(label);
+    const base = id;
+    let n = 2;
+    while (used.has(id)) {
+      id = `${base}-${n++}`;
+    }
+    used.add(id);
+    heading.id = id;
+    return { id, label, pos: progressForY(headingTargetY(heading)) };
+  });
+}
 
 export default function DisclosureRail() {
   const pathname = usePathname();
   const [progress, setProgress] = useState(0);
-  const [active, setActive] = useState<string | null>("setup");
+  const [ticks, setTicks] = useState<Tick[]>([]);
+  const [active, setActive] = useState<string | null>(null);
   const [reduced, setReduced] = useState(false);
   const rafRef = useRef<number | null>(null);
 
@@ -24,14 +66,36 @@ export default function DisclosureRail() {
     return () => mq.removeEventListener("change", apply);
   }, []);
 
-  // Traveling marker + progress bar, driven by scroll position.
   useEffect(() => {
-    if (reduced) return;
+    const measure = () => {
+      const next = collectTicks();
+      setTicks(next);
+      setProgress(currentProgress());
+    };
+    measure();
+    const main = document.querySelector("main");
+    const ro = main ? new ResizeObserver(measure) : null;
+    if (main && ro) ro.observe(main);
+    window.addEventListener("resize", measure);
+    window.addEventListener("load", measure);
+    return () => {
+      ro?.disconnect();
+      window.removeEventListener("resize", measure);
+      window.removeEventListener("load", measure);
+    };
+  }, [pathname]);
+
+  useEffect(() => {
     const compute = () => {
-      const doc = document.documentElement;
-      const max = doc.scrollHeight - window.innerHeight;
-      const p = max > 0 ? Math.min(1, Math.max(0, window.scrollY / max)) : 0;
+      const p = currentProgress();
       setProgress(p);
+      if (ticks.length > 0) {
+        let current = ticks[0];
+        for (const tick of ticks) {
+          if (p + 0.001 >= tick.pos) current = tick;
+        }
+        setActive(current.id);
+      }
       rafRef.current = null;
     };
     const onScroll = () => {
@@ -41,71 +105,47 @@ export default function DisclosureRail() {
     };
     compute();
     window.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("resize", onScroll);
     return () => {
       window.removeEventListener("scroll", onScroll);
-      window.removeEventListener("resize", onScroll);
       if (rafRef.current != null) cancelAnimationFrame(rafRef.current);
     };
-  }, [reduced, pathname]);
+  }, [ticks, pathname]);
 
-  // Active tick, driven by IntersectionObserver over sentinels in <main>.
-  useEffect(() => {
-    if (reduced) return;
-    const main = document.querySelector("main");
-    if (!main) return;
-    if (getComputedStyle(main).position === "static") {
-      main.style.position = "relative";
-    }
-    const sentinels = TICKS.map((t) => {
-      const el = document.createElement("div");
-      el.dataset.tick = t.id;
-      el.setAttribute("aria-hidden", "true");
-      el.style.cssText =
-        "position:absolute;left:0;width:1px;height:1px;pointer-events:none;";
-      el.style.top = `${t.pos * 100}%`;
-      main.appendChild(el);
-      return el;
+  const railY = (pos: number) =>
+    `calc(${0.08 + pos * 0.84} * (100vh - 16rem) + 8rem)`;
+
+  const jumpTo = (tick: Tick) => {
+    const el = document.getElementById(tick.id);
+    if (!el) return;
+    setActive(tick.id);
+    setProgress(tick.pos);
+    el.scrollIntoView({
+      behavior: reduced ? "auto" : "smooth",
+      block: "start",
     });
-    const io = new IntersectionObserver(
-      (entries) => {
-        for (const entry of entries) {
-          if (entry.isIntersecting) {
-            const id = (entry.target as HTMLElement).dataset.tick ?? null;
-            if (id) setActive(id);
-          }
-        }
-      },
-      { rootMargin: "-50% 0px -50% 0px", threshold: 0 },
-    );
-    sentinels.forEach((s) => io.observe(s));
-    return () => {
-      io.disconnect();
-      sentinels.forEach((s) => s.remove());
-    };
-  }, [reduced, pathname]);
-
-  const bandTop = (pos: number) =>
-    `calc(${pos} * (100vh - 16rem) + 8rem)`;
+  };
 
   return (
     <>
-      <div className="rail" aria-hidden="true">
+      <nav className="rail" aria-label="On this page">
         <div className="rail__line" />
-        {TICKS.map((t) => (
-          <div
-            key={t.id}
+        {ticks.map((tick) => (
+          <button
+            key={tick.id}
+            type="button"
             className="rail__tick"
-            data-active={!reduced && active === t.id}
-            style={{ top: bandTop(t.pos) }}
+            data-active={active === tick.id}
+            style={{ top: railY(tick.pos) }}
+            title={tick.label}
+            onClick={() => jumpTo(tick)}
           >
-            <span className="rail__tick-label">{t.label}</span>
-          </div>
+            <span className="rail__tick-label">{tick.label}</span>
+          </button>
         ))}
         {!reduced ? (
-          <div className="rail__marker" style={{ top: bandTop(progress) }} />
+          <div className="rail__marker" style={{ top: railY(progress) }} />
         ) : null}
-      </div>
+      </nav>
 
       <div className="railbar" aria-hidden="true">
         <div

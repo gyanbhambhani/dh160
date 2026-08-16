@@ -21,7 +21,7 @@ export default function Nav() {
   const pathname = usePathname();
 
   return (
-    <header className="border-b border-veil/70 bg-ink/95">
+    <header className="border-b border-veil bg-paper/95">
       <nav
         aria-label="Primary"
         className="mx-auto flex max-w-5xl flex-wrap items-center gap-x-5 gap-y-2 px-5 py-4 sm:px-8"

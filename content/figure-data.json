@@ -1,0 +1,845 @@
+{
+  "fig1": {
+    "bins": [
+      {
+        "x0": 1.0,
+        "x1": 1.3750731683214927,
+        "n": 0
+      },
+      {
+        "x0": 1.3750731683214927,
+        "x1": 1.890826218237708,
+        "n": 0
+      },
+      {
+        "x0": 1.890826218237708,
+        "x1": 2.600024398657471,
+        "n": 0
+      },
+      {
+        "x0": 2.600024398657471,
+        "x1": 3.5752237875751125,
+        "n": 0
+      },
+      {
+        "x0": 3.5752237875751125,
+        "x1": 4.916194301039278,
+        "n": 0
+      },
+      {
+        "x0": 4.916194301039278,
+        "x1": 6.760126873614144,
+        "n": 1954
+      },
+      {
+        "x0": 6.760126873614144,
+        "x1": 9.29566907835587,
+        "n": 7905
+      },
+      {
+        "x0": 9.29566907835587,
+        "x1": 12.782225131242935,
+        "n": 5351
+      },
+      {
+        "x0": 12.782225131242935,
+        "x1": 17.576494809416825,
+        "n": 6370
+      },
+      {
+        "x0": 17.576494809416825,
+        "x1": 24.168966405571073,
+        "n": 5382
+      },
+      {
+        "x0": 24.168966405571073,
+        "x1": 33.234097210364325,
+        "n": 4331
+      },
+      {
+        "x0": 33.234097210364325,
+        "x1": 45.69931534736015,
+        "n": 3600
+      },
+      {
+        "x0": 45.69931534736015,
+        "x1": 62.83990234481755,
+        "n": 3116
+      },
+      {
+        "x0": 62.83990234481755,
+        "x1": 86.40946361430144,
+        "n": 2533
+      },
+      {
+        "x0": 86.40946361430144,
+        "x1": 118.81933490507821,
+        "n": 1795
+      },
+      {
+        "x0": 118.81933490507821,
+        "x1": 163.38527930577845,
+        "n": 1457
+      },
+      {
+        "x0": 163.38527930577845,
+        "x1": 224.66671367208886,
+        "n": 1262
+      },
+      {
+        "x0": 224.66671367208886,
+        "x1": 308.93316978545664,
+        "n": 932
+      },
+      {
+        "x0": 308.93316978545664,
+        "x1": 424.8057125764896,
+        "n": 765
+      },
+      {
+        "x0": 424.8057125764896,
+        "x1": 584.1389371136231,
+        "n": 500
+      },
+      {
+        "x0": 584.1389371136231,
+        "x1": 803.2337789967783,
+        "n": 370
+      },
+      {
+        "x0": 803.2337789967783,
+        "x1": 1104.505217387946,
+        "n": 285
+      },
+      {
+        "x0": 1104.505217387946,
+        "x1": 1518.7754887012622,
+        "n": 215
+      },
+      {
+        "x0": 1518.7754887012622,
+        "x1": 2088.4274232174666,
+        "n": 184
+      },
+      {
+        "x0": 2088.4274232174666,
+        "x1": 2871.7405136531333,
+        "n": 177
+      },
+      {
+        "x0": 2871.7405136531333,
+        "x1": 3948.853326706206,
+        "n": 150
+      },
+      {
+        "x0": 3948.853326706206,
+        "x1": 5429.9622551907705,
+        "n": 106
+      },
+      {
+        "x0": 5429.9622551907705,
+        "x1": 7466.595402111286,
+        "n": 99
+      },
+      {
+        "x0": 7466.595402111286,
+        "x1": 10267.114996155859,
+        "n": 66
+      },
+      {
+        "x0": 10267.114996155859,
+        "x1": 14118.034347285136,
+        "n": 36
+      },
+      {
+        "x0": 14118.034347285136,
+        "x1": 19413.330220393054,
+        "n": 28
+      },
+      {
+        "x0": 19413.330220393054,
+        "x1": 26694.74949382724,
+        "n": 11
+      },
+      {
+        "x0": 26694.74949382724,
+        "x1": 36707.23376402556,
+        "n": 5
+      },
+      {
+        "x0": 36707.23376402556,
+        "x1": 50475.13223221636,
+        "n": 3
+      },
+      {
+        "x0": 50475.13223221636,
+        "x1": 69407.0,
+        "n": 1
+      }
+    ],
+    "cuts": [
+      11,
+      21,
+      55
+    ],
+    "n": 48989,
+    "rawN": 50000,
+    "droppedShort": 843,
+    "droppedLong": 168,
+    "medianScore": 21.0,
+    "maxScore": 69407,
+    "medianWords": 201.0
+  },
+  "fig2": [
+    {
+      "category": "Infidelity",
+      "n": 4239,
+      "pct": 8.7
+    },
+    {
+      "category": "Family harm",
+      "n": 12416,
+      "pct": 25.3
+    },
+    {
+      "category": "Workplace",
+      "n": 4604,
+      "pct": 9.4
+    },
+    {
+      "category": "Petty deception",
+      "n": 2517,
+      "pct": 5.1
+    },
+    {
+      "category": "Criminal",
+      "n": 3722,
+      "pct": 7.6
+    },
+    {
+      "category": "Other",
+      "n": 21491,
+      "pct": 43.9
+    }
+  ],
+  "fig3": [
+    {
+      "category": "Infidelity",
+      "high": [
+        {
+          "term": "wife",
+          "score": 0.0091
+        },
+        {
+          "term": "my wife",
+          "score": 0.008
+        },
+        {
+          "term": "got",
+          "score": 0.0053
+        },
+        {
+          "term": "told",
+          "score": 0.005
+        },
+        {
+          "term": "daughter",
+          "score": 0.0042
+        },
+        {
+          "term": "said",
+          "score": 0.0042
+        },
+        {
+          "term": "went",
+          "score": 0.0042
+        },
+        {
+          "term": "mom",
+          "score": 0.0041
+        }
+      ],
+      "low": [
+        {
+          "term": "love",
+          "score": 0.0084
+        },
+        {
+          "term": "want",
+          "score": 0.0076
+        },
+        {
+          "term": "ve",
+          "score": 0.0069
+        },
+        {
+          "term": "relationship",
+          "score": 0.0067
+        },
+        {
+          "term": "am",
+          "score": 0.006
+        },
+        {
+          "term": "friends",
+          "score": 0.0048
+        },
+        {
+          "term": "don know",
+          "score": 0.0047
+        },
+        {
+          "term": "person",
+          "score": 0.0045
+        }
+      ]
+    },
+    {
+      "category": "Family harm",
+      "high": [
+        {
+          "term": "brother",
+          "score": 0.0053
+        },
+        {
+          "term": "wife",
+          "score": 0.0051
+        },
+        {
+          "term": "kids",
+          "score": 0.005
+        },
+        {
+          "term": "my wife",
+          "score": 0.005
+        },
+        {
+          "term": "didn",
+          "score": 0.005
+        },
+        {
+          "term": "daughter",
+          "score": 0.0049
+        },
+        {
+          "term": "kid",
+          "score": 0.0048
+        },
+        {
+          "term": "son",
+          "score": 0.0045
+        }
+      ],
+      "low": [
+        {
+          "term": "don",
+          "score": 0.011
+        },
+        {
+          "term": "feel",
+          "score": 0.0105
+        },
+        {
+          "term": "myself",
+          "score": 0.0077
+        },
+        {
+          "term": "want",
+          "score": 0.0076
+        },
+        {
+          "term": "feel like",
+          "score": 0.0069
+        },
+        {
+          "term": "am",
+          "score": 0.0066
+        },
+        {
+          "term": "ve",
+          "score": 0.0063
+        },
+        {
+          "term": "life",
+          "score": 0.0062
+        }
+      ]
+    },
+    {
+      "category": "Workplace",
+      "high": [
+        {
+          "term": "food",
+          "score": 0.0065
+        },
+        {
+          "term": "money",
+          "score": 0.005
+        },
+        {
+          "term": "stole",
+          "score": 0.005
+        },
+        {
+          "term": "office",
+          "score": 0.0047
+        },
+        {
+          "term": "went",
+          "score": 0.0043
+        },
+        {
+          "term": "told",
+          "score": 0.0037
+        },
+        {
+          "term": "nobody",
+          "score": 0.0037
+        },
+        {
+          "term": "used",
+          "score": 0.0036
+        }
+      ],
+      "low": [
+        {
+          "term": "want",
+          "score": 0.0086
+        },
+        {
+          "term": "feel",
+          "score": 0.0078
+        },
+        {
+          "term": "don",
+          "score": 0.0075
+        },
+        {
+          "term": "hate",
+          "score": 0.0074
+        },
+        {
+          "term": "ve",
+          "score": 0.0071
+        },
+        {
+          "term": "like",
+          "score": 0.0066
+        },
+        {
+          "term": "love",
+          "score": 0.0066
+        },
+        {
+          "term": "myself",
+          "score": 0.0062
+        }
+      ]
+    },
+    {
+      "category": "Petty deception",
+      "high": [
+        {
+          "term": "went",
+          "score": 0.0074
+        },
+        {
+          "term": "kid",
+          "score": 0.0069
+        },
+        {
+          "term": "phone",
+          "score": 0.0063
+        },
+        {
+          "term": "name",
+          "score": 0.0063
+        },
+        {
+          "term": "got",
+          "score": 0.0061
+        },
+        {
+          "term": "house",
+          "score": 0.0059
+        },
+        {
+          "term": "school",
+          "score": 0.0058
+        },
+        {
+          "term": "didn",
+          "score": 0.0057
+        }
+      ],
+      "low": [
+        {
+          "term": "myself",
+          "score": 0.0105
+        },
+        {
+          "term": "people",
+          "score": 0.0104
+        },
+        {
+          "term": "love",
+          "score": 0.009
+        },
+        {
+          "term": "ve",
+          "score": 0.0088
+        },
+        {
+          "term": "want",
+          "score": 0.0083
+        },
+        {
+          "term": "feel",
+          "score": 0.0073
+        },
+        {
+          "term": "don",
+          "score": 0.0073
+        },
+        {
+          "term": "like",
+          "score": 0.0071
+        }
+      ]
+    },
+    {
+      "category": "Criminal",
+      "high": [
+        {
+          "term": "food",
+          "score": 0.007
+        },
+        {
+          "term": "money",
+          "score": 0.0056
+        },
+        {
+          "term": "stole",
+          "score": 0.005
+        },
+        {
+          "term": "dad",
+          "score": 0.0047
+        },
+        {
+          "term": "week",
+          "score": 0.0045
+        },
+        {
+          "term": "took",
+          "score": 0.0041
+        },
+        {
+          "term": "dollars",
+          "score": 0.0041
+        },
+        {
+          "term": "day",
+          "score": 0.004
+        }
+      ],
+      "low": [
+        {
+          "term": "ve",
+          "score": 0.0083
+        },
+        {
+          "term": "myself",
+          "score": 0.0078
+        },
+        {
+          "term": "feel",
+          "score": 0.0075
+        },
+        {
+          "term": "don",
+          "score": 0.0072
+        },
+        {
+          "term": "am",
+          "score": 0.0051
+        },
+        {
+          "term": "know",
+          "score": 0.0051
+        },
+        {
+          "term": "want",
+          "score": 0.0051
+        },
+        {
+          "term": "person",
+          "score": 0.0049
+        }
+      ]
+    }
+  ],
+  "fig4": [
+    {
+      "category": "Infidelity",
+      "q1": 8.4,
+      "q2": 7.92,
+      "q3": 7.62,
+      "q4": 6.39
+    },
+    {
+      "category": "Family harm",
+      "q1": 9.05,
+      "q2": 8.35,
+      "q3": 7.92,
+      "q4": 6.77
+    },
+    {
+      "category": "Workplace",
+      "q1": 6.94,
+      "q2": 6.99,
+      "q3": 6.49,
+      "q4": 4.95
+    },
+    {
+      "category": "Petty deception",
+      "q1": 9.31,
+      "q2": 8.5,
+      "q3": 7.94,
+      "q4": 7.13
+    },
+    {
+      "category": "Criminal",
+      "q1": 6.94,
+      "q2": 6.52,
+      "q3": 6.05,
+      "q4": 5.3
+    }
+  ],
+  "fig5": [
+    {
+      "quartile": "q1",
+      "pct": 10.6
+    },
+    {
+      "quartile": "q2",
+      "pct": 11.7
+    },
+    {
+      "quartile": "q3",
+      "pct": 13.1
+    },
+    {
+      "quartile": "q4",
+      "pct": 20.1
+    }
+  ],
+  "fig6": [
+    {
+      "id": 5,
+      "terms": [
+        "money",
+        "work",
+        "job",
+        "pay",
+        "get",
+        "stole",
+        "food",
+        "store"
+      ],
+      "n": 4587,
+      "medianScore": 27.0,
+      "pctHigh": 31.7
+    },
+    {
+      "id": 2,
+      "terms": [
+        "didn",
+        "back",
+        "got",
+        "went",
+        "said",
+        "after",
+        "night",
+        "one"
+      ],
+      "n": 9689,
+      "medianScore": 25.0,
+      "pctHigh": 30.8
+    },
+    {
+      "id": 4,
+      "terms": [
+        "mom",
+        "dad",
+        "brother",
+        "sister",
+        "mother",
+        "parents",
+        "family",
+        "father"
+      ],
+      "n": 3778,
+      "medianScore": 25.0,
+      "pctHigh": 30.1
+    },
+    {
+      "id": 6,
+      "terms": [
+        "school",
+        "class",
+        "high",
+        "teacher",
+        "grade",
+        "year",
+        "kid",
+        "college"
+      ],
+      "n": 4139,
+      "medianScore": 25.0,
+      "pctHigh": 29.3
+    },
+    {
+      "id": 3,
+      "terms": [
+        "love",
+        "wife",
+        "relationship",
+        "married",
+        "ex",
+        "together",
+        "husband",
+        "years"
+      ],
+      "n": 3319,
+      "medianScore": 19.0,
+      "pctHigh": 23.3
+    },
+    {
+      "id": 7,
+      "terms": [
+        "sex",
+        "women",
+        "girl",
+        "guy",
+        "girls",
+        "porn",
+        "men",
+        "guys"
+      ],
+      "n": 2682,
+      "medianScore": 21.0,
+      "pctHigh": 22.6
+    },
+    {
+      "id": 9,
+      "terms": [
+        "people",
+        "hate",
+        "think",
+        "light",
+        "no",
+        "person",
+        "other",
+        "friends"
+      ],
+      "n": 4685,
+      "medianScore": 19.0,
+      "pctHigh": 21.6
+    },
+    {
+      "id": 12,
+      "terms": [
+        "friend",
+        "friends",
+        "best",
+        "girl",
+        "told",
+        "girlfriend",
+        "talk",
+        "close"
+      ],
+      "n": 2602,
+      "medianScore": 17.0,
+      "pctHigh": 19.9
+    },
+    {
+      "id": 8,
+      "terms": [
+        "am",
+        "myself",
+        "life",
+        "no",
+        "now",
+        "know",
+        "afraid",
+        "going"
+      ],
+      "n": 3378,
+      "medianScore": 18.0,
+      "pctHigh": 18.9
+    },
+    {
+      "id": 1,
+      "terms": [
+        "ve",
+        "myself",
+        "life",
+        "never",
+        "years",
+        "now",
+        "time",
+        "ever"
+      ],
+      "n": 3109,
+      "medianScore": 17.0,
+      "pctHigh": 18.1
+    },
+    {
+      "id": 10,
+      "terms": [
+        "feel",
+        "bad",
+        "know",
+        "remorse",
+        "guilty",
+        "makes",
+        "feeling",
+        "even"
+      ],
+      "n": 3630,
+      "medianScore": 16.0,
+      "pctHigh": 17.3
+    },
+    {
+      "id": 11,
+      "terms": [
+        "want",
+        "hate",
+        "know",
+        "im",
+        "go",
+        "fucking",
+        "get",
+        "dont"
+      ],
+      "n": 3391,
+      "medianScore": 16.0,
+      "pctHigh": 17.0
+    }
+  ],
+  "lengthByQuartile": {
+    "q1": 194.0,
+    "q2": 197.0,
+    "q3": 197.0,
+    "q4": 216.0
+  },
+  "categoryShare": {
+    "Infidelity": 4239,
+    "Family harm": 12416,
+    "Workplace": 4604,
+    "Petty deception": 2517,
+    "Criminal": 3722,
+    "Other": 21491
+  }
+}

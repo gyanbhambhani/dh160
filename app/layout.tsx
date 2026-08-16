@@ -30,6 +30,7 @@ export const metadata: Metadata = {
   },
   description:
     "A close and distant reading of 50,000 posts from r/confession, a community that judges no one.",
+  authors: [{ name: "Gyan Bhambhani" }],
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

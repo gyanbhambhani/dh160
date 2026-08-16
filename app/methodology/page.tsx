@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { methodology } from "@/content/methodology";
+import Figure from "@/components/Figure";
 
 export const metadata: Metadata = {
   title: methodology.meta.title,
@@ -43,6 +44,7 @@ export default function MethodologyPage() {
             <p key={i}>{p}</p>
           ))}
         </div>
+        <Figure spec={methodology.corpus.figure} />
       </section>
 
       <section className="mt-16">
@@ -70,6 +72,7 @@ export default function MethodologyPage() {
               <h3 className="font-display measure text-xl">{method.name}</h3>
               <p className="measure mt-3">{method.body}</p>
               {method.note ? <Note>{method.note}</Note> : null}
+              {method.figure ? <Figure spec={method.figure} /> : null}
             </div>
           ))}
         </div>
@@ -111,15 +114,6 @@ export default function MethodologyPage() {
         <p className="measure mt-3">
           <Link href="/reflection">Read the Critical Reflection</Link>.
         </p>
-      </section>
-
-      <section className="mt-16">
-        <h2 className="font-display measure text-2xl sm:text-3xl">
-          {methodology.aiNote.heading}
-        </h2>
-        <div className="prose-body measure mt-3">
-          <p>{methodology.aiNote.body}</p>
-        </div>
       </section>
     </article>
   );

@@ -1,12 +1,12 @@
 @import "tailwindcss";
 
 @theme {
-  --color-ink: #101219;
-  --color-veil: #191d2a;
-  --color-paper: #e7e3db;
-  --color-ash: #8b90a0;
-  --color-dusk: #7d9bc1;
-  --color-signal: #d9a441;
+  --color-ink: #1e2836;
+  --color-veil: #d4dbe3;
+  --color-paper: #f2f4f7;
+  --color-ash: #5c6774;
+  --color-dusk: #2c5680;
+  --color-signal: #9a4034;
 
   --font-display: var(--font-fraunces);
   --font-body: var(--font-literata);
@@ -14,16 +14,16 @@
 }
 
 :root {
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 html {
-  background: var(--color-ink);
+  background: var(--color-paper);
 }
 
 body {
-  background: var(--color-ink);
-  color: var(--color-paper);
+  background: var(--color-paper);
+  color: var(--color-ink);
   font-family: var(--font-body), Georgia, serif;
   font-size: 18px;
   line-height: 1.7;
@@ -60,6 +60,10 @@ body {
   max-width: 68ch;
 }
 
+main h2 {
+  scroll-margin-top: 5.5rem;
+}
+
 .prose-body p {
   margin-block: 1.15em;
   max-width: 68ch;
@@ -92,8 +96,8 @@ a:hover {
 /* Selection ----------------------------------------------------------- */
 
 ::selection {
-  background: color-mix(in srgb, var(--color-dusk) 35%, transparent);
-  color: var(--color-paper);
+  background: color-mix(in srgb, var(--color-dusk) 22%, transparent);
+  color: var(--color-ink);
 }
 
 /* Disclosure rail (desktop) ------------------------------------------ */
@@ -135,6 +139,14 @@ a:hover {
   align-items: center;
   gap: 0.6rem;
   transform: translateY(-50%);
+  pointer-events: auto;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  text-align: left;
+  color: inherit;
 }
 
 .rail__tick::before {
@@ -147,14 +159,19 @@ a:hover {
 
 .rail__tick-label {
   font-family: var(--font-mono), ui-monospace, monospace;
-  text-transform: uppercase;
-  letter-spacing: 0.16em;
-  font-size: 0.6rem;
+  letter-spacing: 0.04em;
+  font-size: 0.62rem;
+  line-height: 1.25;
   color: var(--color-ash);
-  white-space: nowrap;
+  max-width: 10.5rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
   transition: color 0.2s ease;
 }
 
+.rail__tick:hover .rail__tick-label,
 .rail__tick[data-active="true"] .rail__tick-label {
   color: var(--color-dusk);
 }
@@ -197,4 +214,70 @@ a:hover {
   .railbar__fill {
     transition: none;
   }
+}
+
+/* Figures ------------------------------------------------------------- */
+
+.project-figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+  background: #101219;
+  border: 1px solid var(--color-veil);
+}
+
+.project-figure figcaption {
+  max-width: 68ch;
+  margin-top: 0.85rem;
+  color: var(--color-ash);
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+/* Tables -------------------------------------------------------------- */
+
+.data-table-wrap {
+  overflow-x: auto;
+}
+
+.data-table {
+  width: 100%;
+  max-width: 68ch;
+  border-collapse: collapse;
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.03em;
+}
+
+.data-table caption {
+  caption-side: bottom;
+  text-align: left;
+  padding-top: 0.85rem;
+  color: var(--color-ash);
+  font-family: var(--font-body), Georgia, serif;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  letter-spacing: 0;
+}
+
+.data-table th,
+.data-table td {
+  border-bottom: 1px solid var(--color-veil);
+  padding: 0.6rem 0.7rem;
+  text-align: right;
+  color: var(--color-ink);
+}
+
+.data-table th:first-child,
+.data-table td:first-child {
+  text-align: left;
+  padding-left: 0;
+}
+
+.data-table thead th {
+  color: var(--color-ash);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.68rem;
 }

@@ -9,14 +9,23 @@ export default function SourceList({ items }: { items: readonly Source[] }) {
           className="max-w-[68ch]"
           style={{ paddingLeft: "1.6em", textIndent: "-1.6em" }}
         >
-          <span>{s.authors}</span>
-          {s.year ? <span> ({s.year}). </span> : <span> </span>}
+          <span>{s.authors} </span>
           {s.title ? (
-            <span style={s.placeholder ? { color: "var(--color-ash)" } : undefined}>
+            <span
+              style={s.placeholder ? { color: "var(--color-ash)" } : undefined}
+            >
               {s.title}{" "}
             </span>
           ) : null}
-          {s.italicTitle ? <em>{s.italicTitle} </em> : null}
+          {s.italicTitle ? (
+            s.title ? (
+              <>
+                <em>{s.italicTitle.replace(/\.$/, "")}</em>,{" "}
+              </>
+            ) : (
+              <em>{s.italicTitle} </em>
+            )
+          ) : null}
           {s.detail ? <span>{s.detail} </span> : null}
           {s.href ? (
             <a href={s.href} target="_blank" rel="noopener noreferrer">

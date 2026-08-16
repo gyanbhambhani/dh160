@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { findings } from "@/content/findings";
-import FigurePlaceholder from "@/components/FigurePlaceholder";
+import DataTable from "@/components/DataTable";
+import Figure from "@/components/Figure";
 
 export const metadata: Metadata = {
   title: findings.meta.title,
@@ -15,35 +16,34 @@ export default function FindingsPage() {
         <h1 className="font-display text-4xl sm:text-5xl">{findings.title}</h1>
       </header>
 
-      <p
-        className="mono mb-14 inline-block rounded-sm px-3 py-2 text-[0.7rem] uppercase"
-        style={{
-          background: "var(--color-veil)",
-          color: "var(--color-signal)",
-        }}
-        role="status"
-      >
-        {findings.banner}
-      </p>
-
-      {findings.expectations.map((exp) => (
-        <section key={exp.label} className="mt-14 first:mt-0">
-          <p className="eyebrow mb-3">{exp.label}</p>
+      {findings.sections.map((section) => (
+        <section key={section.heading} className="mt-16 first:mt-0">
+          {section.eyebrow ? (
+            <p className="eyebrow mb-3">{section.eyebrow}</p>
+          ) : null}
           <h2 className="font-display measure text-2xl sm:text-3xl">
-            {exp.heading}
+            {section.heading}
           </h2>
           <div className="prose-body measure mt-3">
-            <p>{exp.body}</p>
+            {section.paragraphs.map((p, i) => (
+              <p key={i}>{p}</p>
+            ))}
           </div>
-          <FigurePlaceholder caption={exp.figureCaption} />
+          {section.table ? (
+            <DataTable
+              caption={section.table.caption}
+              headers={section.table.headers}
+              rows={section.table.rows}
+            />
+          ) : null}
+          {section.figure ? (
+            <Figure
+              spec={section.figure}
+              wide={section.figure.number === 6 || section.figure.number === 8}
+            />
+          ) : null}
         </section>
       ))}
-
-      <section className="mt-16 border-t border-veil pt-10">
-        <p className="measure" style={{ color: "var(--color-ash)" }}>
-          {findings.closeReading}
-        </p>
-      </section>
     </article>
   );
 }

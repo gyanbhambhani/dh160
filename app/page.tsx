@@ -12,7 +12,7 @@ export default function HomePage() {
   return (
     <article>
       <section className="mb-16">
-        <PullQuote label={home.hero.label}>{home.hero.quote}</PullQuote>
+        <PullQuote>{home.hero.quote}</PullQuote>
       </section>
 
       <div className="prose-body measure">
