@@ -81,10 +81,25 @@ export const sources = {
     {
       authors: "Dataset.",
       year: "",
-      title:
-        "50,000 top-scoring submissions to r/confession, January 2011 through December 2023.",
+      title: "confession_submissions-top.csv.",
       detail:
-        "Public Reddit submissions dump. Working corpus after filtering: 47,500 posts.",
+        "50,000 top-scoring submissions to r/confession, 26 January 2011 through 31 December 2023. Columns: id, score, selftext, created_utc, author, subreddit, title. Working corpus after filtering: 47,500 posts. 40,132 unique authors; 5,261 deleted accounts. File in the Code Appendix.",
+      placeholder: true,
+    },
+    {
+      authors: "Dataset.",
+      year: "",
+      title: "confession_comments-top.csv.",
+      detail:
+        "200,000 top comments on r/confession, collected with the submissions file. Columns: id, score, body, created_utc, author, subreddit. Included in the appendix; not used in the analysis.",
+      placeholder: true,
+    },
+    {
+      authors: "Dataset.",
+      year: "",
+      title: "close_reading_sample.csv.",
+      detail:
+        "173 posts written by Part D of confession_analysis_bhambhani.ipynb from the submissions file after NMF. Twelve topics, centroid posts stratified by anonymity tier, plus score extremes. Hand-coding columns: disclosure_position_pct, mitigating_context_before, explicit_self_judgment, self_judgment_position, notes.",
       placeholder: true,
     },
   ] satisfies Source[],

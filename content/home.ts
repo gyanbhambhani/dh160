@@ -5,7 +5,8 @@ export const home = {
       "A close and distant reading of 50,000 posts from r/confession, a community that judges no one.",
   },
   hero: {
-    quote: "Nobody has to decide anything. That is what makes it interesting.",
+    title: "Anonymous Confession",
+    quote: "A deeper look at reddit's confessions subreddit.",
   },
   essay: [
     "r/confession is a community where people describe things they have done and have not told anyone. Infidelity, theft from family, workplace dishonesty, small cruelties, occasionally crimes. What makes it unusual as an object of study is what it lacks. There is no verdict mechanism. Communities like r/AmITheAsshole are built around a judgment structure that returns a labeled ruling on the poster. r/confession returns nothing. Readers can upvote, comment, or scroll past, and the community is never obligated to say whether the confessor is forgiven.",
@@ -21,7 +22,7 @@ export const home = {
     {
       heading: "The corpus",
       body: [
-        "Fifty thousand top-ranked posts spanning January 2011 through December 2023, with post ID, score, body text, timestamp, author, and title. After dropping posts under 30 words and over 2,000 words, the working corpus is 47,500. Median post length is 185 words, with a long tail running past a thousand. Median score is 21, and the maximum sits above 69,000. The spread matters: there is enough length for narrative structure to develop, and enough variance in reception to ask what gets rewarded.",
+        "The scrape is two files. confession_submissions-top.csv holds 50,000 top-scoring posts from January 2011 through December 2023, with id, score, selftext, created_utc, author, subreddit, and title. confession_comments-top.csv holds 200,000 top comments collected with it. The argument is about how posts are written and rewarded, so the analysis runs on submissions. After dropping posts under 30 words and over 2,000 words, the working corpus is 47,500. Median post length is 185 words, with a long tail running past a thousand. Median score is 21, and the maximum is 69,407. The spread matters: there is enough length for narrative structure to develop, and enough variance in reception to ask what gets rewarded.",
       ],
     },
     {

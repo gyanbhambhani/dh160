@@ -12,7 +12,12 @@ export default function HomePage() {
   return (
     <article>
       <section className="mb-16">
-        <PullQuote>{home.hero.quote}</PullQuote>
+        <h1 className="font-display text-4xl sm:text-5xl md:text-6xl">
+          {home.hero.title}
+        </h1>
+        <div className="mt-8">
+          <PullQuote>{home.hero.quote}</PullQuote>
+        </div>
       </section>
 
       <div className="prose-body measure">

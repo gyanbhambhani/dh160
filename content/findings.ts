@@ -92,7 +92,7 @@ export const findings = {
       eyebrow: "Expectation 3",
       heading: "Disclosure timing stays out of reach",
       paragraphs: [
-        "Both methods treat a post as an unordered set of words, so where the disclosure lands is invisible to both. I pulled a close-reading sample from each topic \u2014 centroid posts stratified by anonymity tier, plus score extremes \u2014 and sat with them. In the posts I read, long posts defer the disclosure and short posts lead with it. That is a qualitative observation from the sample, not a counted result across 47,500 rows. No parameter change would let the models see it.",
+        "Both methods treat a post as an unordered set of words, so where the disclosure lands is invisible to both. The notebook pulls close_reading_sample.csv for this: 173 posts from the 12 topics, centroid posts stratified by anonymity tier, plus score extremes. In the posts I read, long posts defer the disclosure and short posts lead with it. That is a qualitative observation from the sample, not a counted result across 47,500 rows. No parameter change would let the models see it.",
       ],
     },
     {

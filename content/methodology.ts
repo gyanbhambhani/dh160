@@ -19,7 +19,7 @@ export const methodology = {
   corpus: {
     heading: "Corpus",
     paragraphs: [
-      "This study uses 50,000 top-scoring submissions to r/confession, January 2011 through December 2023. Each record carries a post ID, score, body text, timestamp, author, and title. The usual Reddit-cleaning step drops bodies marked [deleted] or [removed]. This file has none, so I did not run it. After dropping posts under 30 words (2,344) and over 2,000 words (156), the working corpus is 47,500. Median length is 185 words; median score is 21; the maximum sits above 69,000. I keep first-person pronouns and negations that most stopword lists discard, because here they carry the rhetorical weight.",
+      "This study uses confession_submissions-top.csv: 50,000 top-scoring submissions to r/confession, 26 January 2011 through 31 December 2023. Each record carries id, score, selftext, created_utc, author, subreddit, and title. There are 40,132 unique authors; 5,261 of those accounts are already [deleted]. The usual Reddit-cleaning step drops bodies marked [deleted] or [removed]. This file has none, so I did not run it. After dropping posts under 30 words (2,344) and over 2,000 words (156), the working corpus is 47,500. Median length is 185 words; median score is 21; the maximum is 69,407. I keep first-person pronouns and negations that most stopword lists discard, because here they carry the rhetorical weight. The scrape also includes confession_comments-top.csv, 200,000 top comments. I leave that file in the appendix and do not analyze it, because the question is about how a confession is written and rewarded, not about the thread that follows.",
       "These are top posts. The file does not describe typical confession activity. It describes what the community already chose to promote. r/confession has no verdict mechanism, so upvoting is nearly the only judgment it makes, and a top-post corpus is a record of rewarded confession. I first treated that as a sampling bug. It is closer to the object of study. The question changed from what confession looks like to what a rewarded confession looks like.",
     ],
     figure: figures.score,
@@ -44,7 +44,7 @@ export const methodology = {
       },
       {
         name: "Anonymity tiers",
-        body: "Reddit does not label anonymity. The author column almost does. I assign each post to one of four tiers: throwaway-named accounts (the name announces disposability: throwaway, burner, anon, alt2), deleted accounts, authors who appear once, and authors who return under the same name. Deleted is muddier than throwaway \u2014 deletion can follow regret. The regex misses ordinary-looking throwaways, which biases toward finding no effect. If a gradient still shows up, it is despite the classifier.",
+        body: "Reddit does not label anonymity. The author column almost does. I assign each post to one of four tiers: throwaway-named accounts (the name announces disposability: throwaway, burner, anon, alt2), deleted accounts, authors who appear once, and authors who return under the same name. Deleted is muddier than throwaway \u2014 deletion can follow regret. 74.5 percent of posts in the raw file come from authors who appear once, and some of those are just lapsed accounts. The regex misses ordinary-looking throwaways, which biases toward finding no effect. If a gradient still shows up, it is despite the classifier.",
         note: "The tiers are an instrument I built. Their order is an argument: throwaway, deleted, single-post, persistent.",
       },
       {
@@ -65,7 +65,7 @@ export const methodology = {
       },
       {
         name: "From distant to close reading",
-        body: "For every topic I pull posts nearest the centroid, stratified across anonymity tiers, plus the highest- and lowest-scoring post. I read them for where the disclosure falls, whether mitigating context precedes it, and whether an explicit self-judgment appears. The models decide what I read. Reading decides what the patterns mean.",
+        body: "Part D of the notebook writes close_reading_sample.csv: 173 posts across all 12 NMF topics, nearest each centroid, stratified across the four anonymity tiers, plus the highest- and lowest-scoring post in the topic. The hand-coding columns start empty: disclosure_position_pct, mitigating_context_before, explicit_self_judgment, self_judgment_position, and notes. I fill those by reading. The models decide what I read. Reading decides what the patterns mean.",
         note: "Sequence is invisible to both models. When a confessor discloses is recoverable only by reading.",
       },
     ] satisfies Method[],
